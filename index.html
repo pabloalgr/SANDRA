@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S.A.N.D.R.A. – Sistema Analógico Neotécnico de Detección Rápida de Alerta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #016fb9;
+      --secondary: #00a859;
+      --dark: #1f2a37;
+      --light: #f4f7fb;
+      --accent: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, rgba(1,111,185,0.95), rgba(0,168,89,0.9)), url("img/WhatsApp Image 2025-11-13 at 11.55.20.jpeg") center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 0;
+    }
+    header .content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    header .logo {
+      max-width: 180px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.9rem 2.5rem;
+      background: var(--accent);
+      color: var(--dark);
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.24);
+    }
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 20px 45px rgba(15, 35, 95, 0.1);
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .card p { margin-bottom: 0.75rem; }
+    .list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .list li {
+      padding: 0.4rem 0;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    .list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0.4rem;
+      top: 0;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+    .process {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 14px 30px rgba(31, 42, 55, 0.08);
+    }
+    .badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .highlight {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      display: grid;
+      gap: 1.8rem;
+      box-shadow: 0 24px 45px rgba(0,0,0,0.08);
+    }
+    .highlight img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 20px 40px rgba(1,111,185,0.25);
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .impact-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.1);
+    }
+    .impact-card strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background: var(--dark);
+      color: #d9e2ec;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      header { padding: 5rem 1.25rem; }
+      header h1 { font-size: 2.4rem; }
+      header .logo { max-width: 140px; }
+      .process-step { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="content">
+      <img src="img/Logo.png" alt="Logo S.A.N.D.R.A." class="logo">
+      <span class="section-title">Samsung Solve for Tomorrow 2025</span>
+      <h1>S.A.N.D.R.A.</h1>
+      <p>
+        Una pulsera inteligente desarrollada por estudiantes del Club Digital CARPA (Pirané, Formosa) para enviar alertas SOS con ubicación GPS a través de SMS, sin depender de internet ni aplicaciones móviles.
+      </p>
+      <a class="cta-button" href="#contacto">Votá por nuestra idea</a>
+    </div>
+  </header>
+
+  <section id="que-es">
+    <div class="hero-grid">
+      <div>
+        <span class="section-title">Nuestra misión</span>
+        <h2>Seguridad autónoma para comunidades vulnerables</h2>
+        <p>
+          S.A.N.D.R.A. mejora la respuesta ante emergencias de adultos mayores, mujeres embarazadas, niños y habitantes rurales, donde la inseguridad y la falta de conectividad complican pedir ayuda a tiempo.
+        </p>
+        <ul class="list">
+          <li>Acceso inmediato a asistencia aun sin señal de datos.</li>
+          <li>Alertas geolocalizadas para familiares, rescatistas o el centro de monitoreo.</li>
+          <li>Diseño robusto y cómodo, inspirado en relojes inteligentes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Reconocimiento</h3>
+        <p>Proyecto semifinalista del programa Samsung Solve for Tomorrow 2025 en Argentina.</p>
+        <p>Impulsado por jóvenes innovadores del Club Digital CARPA en Pirané, Formosa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <span class="section-title">Cómo funciona</span>
+    <h2>Cadena de respuesta rápida y confiable</h2>
+    <div class="process">
+      <div class="process-step">
+        <div class="badge">1</div>
+        <div>
+          <h3>Botón SOS inmediato</h3>
+          <p>El usuario presiona el botón de emergencia y la pulsera S.A.N.D.R.A. se activa al instante.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="badge">2</div>
+        <div>
+          <h3>SMS con ubicación GPS</h3>
+          <p>En segundos, se envía un mensaje de texto con las coordenadas exactas a una base receptora (celular o Raspberry Pi).</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="badge">3</div>
+        <div>
+          <h3>Monitoreo y respuesta</h3>
+          <p>La base muestra la alerta en pantalla, permite confirmar recepción, cancelar envíos accidentales y activar el modo “extraviado inteligente” para seguimiento periódico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnologia">
+    <div class="highlight">
+      <div>
+        <span class="section-title">Tecnología aplicada</span>
+        <h2>Diseño pensado para la autonomía</h2>
+        <ul class="list">
+          <li>Módulo GSM para SMS: cobertura donde exista señal celular básica.</li>
+          <li>GPS integrado para coordenadas precisas incluso sin internet.</li>
+          <li>Microcontrolador de bajo consumo y batería de larga duración.</li>
+          <li>Mecanismo de doble pulsación para cancelar falsos positivos.</li>
+        </ul>
+      </div>
+      <img src="img/WhatsApp Image 2025-11-13 at 11.55.20 (1).jpeg" alt="Prototipo pulsera S.A.N.D.R.A.">
+    </div>
+  </section>
+
+  <section id="impacto">
+    <span class="section-title">Impacto esperado</span>
+    <h2>Resultados que transforman vidas</h2>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <strong>+ Seguridad</strong>
+        <p>Reducción de tiempos de respuesta ante eventos de riesgo para los sectores más vulnerables.</p>
+      </div>
+      <div class="impact-card">
+        <strong>+ Cobertura</strong>
+        <p>Expansión de la asistencia en zonas rurales donde las apps requieren datos móviles.</p>
+      </div>
+      <div class="impact-card">
+        <strong>+ Confianza</strong>
+        <p>Mayor tranquilidad para familias y cuidadores al saber que un SOS está a un SMS de distancia.</p>
+      </div>
+      <div class="impact-card">
+        <strong>+ Innovación</strong>
+        <p>Motivación para más jóvenes del Club Digital CARPA a crear soluciones tecnológicas con impacto social.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo">
+    <span class="section-title">Quiénes somos</span>
+    <h2>Estudiantes comprometidos con su comunidad</h2>
+    <p>
+      El equipo S.A.N.D.R.A. está formado por estudiantes del Club Digital CARPA, una iniciativa educativa de Pirané que fomenta la innovación tecnológica con impacto social. Guiados por docentes y mentores, los jóvenes investigan, prototipan y validan soluciones reales para los desafíos de su entorno.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <span class="section-title">Súmate</span>
+    <h2>¿Querés colaborar con S.A.N.D.R.A.?</h2>
+    <div class="card">
+      <p>Ayudanos con tu voto en la final de Samsung Solve for Tomorrow 2025.</p>
+      <p>Tu voto nos ayuda a llegar a la final y tu visualización nos ayuda a llegar a más personas.</p>
+      <a class="cta-button" href="https://solvefortomorrow.com.ar/">¡Dejá tu voto!</a> <a class="cta-button" href="https://youtu.be/G-c9v53qI0A?si=DfOMEVcnZ1bIX6fR">¡Visualizanos!</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>S.A.N.D.R.A. · Club Digital CARPA · Pirané, Formosa · Samsung Solve for Tomorrow 2025</p>
+    <p><a href="#que-es">Volver al inicio</a></p>
+  </footer>
+</body>
+</html>
